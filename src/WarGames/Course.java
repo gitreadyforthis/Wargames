@@ -1,8 +1,8 @@
 package WarGames;
 
-import java.util.LinkedList;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.io.*;
 import java.util.StringTokenizer;
 
 /**
@@ -59,15 +59,15 @@ public class Course implements Courses {
         return false;
     }
     public String getGrade(){
-        File file = new File("C:/Users/Metal_000/IdeaProjects/Wargames/src/WarGames/grades.txt");
+        File file = new File("src/WarGames/files/grades.txt");
         Scanner scan = null;
         try {
             scan = new Scanner(file);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        LinkedList<String> items = new LinkedList<>();
-        String stuff = null;
+
+        String stuff;
         String compleat=null;
 
         assert scan != null;
