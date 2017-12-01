@@ -59,7 +59,7 @@ public class Course implements Courses {
         return false;
     }
     public String getGrade(){
-        File file = new File("C:/Users/Metal_000/IdeaProjects/Wargames/src/WarGames/grades.txt");
+        File file = new File("src/WarGames/grades.txt");
         Scanner scan = null;
         try {
             scan = new Scanner(file);
