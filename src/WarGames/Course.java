@@ -1,8 +1,8 @@
 package WarGames;
 
-import java.util.LinkedList;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.io.*;
 import java.util.StringTokenizer;
 
 /**
@@ -17,7 +17,8 @@ public class Course implements Courses {
 //    String stuff = scan.nextLine();
 
 
-
+    File file = new File("src/WarGames/grades.txt");
+    Scanner scan = null;
     /**
      * boolean isRegistered() checks if the user(professor,ta,or student)
      * is actually registered for the course they want to access
@@ -56,18 +57,29 @@ public class Course implements Courses {
      */
     @Override
     public boolean hasAssignment() {
-        return false;
-    }
-    public String getGrade(){
-        File file = new File("src/WarGames/grades.txt");
-        Scanner scan = null;
         try {
             scan = new Scanner(file);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        LinkedList<String> items = new LinkedList<>();
-        String stuff = null;
+
+        if () {
+
+        } else {
+
+        }
+        scan.close();
+        return false;
+
+    }
+    public String getGrade(){
+
+        try {
+            scan = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        String stuff;
         String compleat=null;
 
         assert scan != null;
@@ -79,6 +91,7 @@ public class Course implements Courses {
             if (student.equals("Greg"))
                compleat = grade;
         }
+        scan.close();
       return compleat;
     }
 }
