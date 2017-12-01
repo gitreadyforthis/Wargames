@@ -1,12 +1,22 @@
 package WarGames;
 
+import java.util.LinkedList;
+import java.util.Scanner;
+import java.io.*;
+import java.util.StringTokenizer;
+
 /**
  * The class for course, contains a single character called grade
  * and a People array of people objects
+ * contains a scanner to read in user input
+ * and a file io to read in files
  */
 public class Course implements Courses {
     char grade;
-    People[] people;
+//    Scanner scan = new Scanner("studentrecords/grades.txt").useDelimiter("\\s*Final Grade:\\s*");
+//    String stuff = scan.nextLine();
+
+
 
     /**
      * boolean isRegistered() checks if the user(professor,ta,or student)
@@ -47,5 +57,28 @@ public class Course implements Courses {
     @Override
     public boolean hasAssignment() {
         return false;
+    }
+    public String getGrade(){
+        File file = new File("C:/Users/Metal_000/IdeaProjects/Wargames/src/WarGames/grades.txt");
+        Scanner scan = null;
+        try {
+            scan = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        LinkedList<String> items = new LinkedList<>();
+        String stuff = null;
+        String compleat=null;
+
+        assert scan != null;
+        while( scan.hasNextLine()) {
+            stuff = scan.nextLine();
+            StringTokenizer myTokenizer = new StringTokenizer(stuff, ",");
+            String student = myTokenizer.nextToken();
+            String grade = myTokenizer.nextToken();
+            if (student.equals("Greg"))
+               compleat = grade;
+        }
+      return compleat;
     }
 }

@@ -6,12 +6,12 @@ package WarGames;
  */
 
 public class Assignments implements Assignment {
-    Student student;
+    Student studentResponse;
     private int grade;
 
     public Assignments(int grade) {
         this.grade = grade;
-        student = new Student();
+        studentResponse = new Student();
     }
 
     /**

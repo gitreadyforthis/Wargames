@@ -17,6 +17,7 @@ public class Student implements People {
      */
     public void uploadAssignment() {
 
+    //Assignments added = new Assignments();
     }
 
     /**
