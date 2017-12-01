@@ -1,5 +1,11 @@
 package WarGames;
 
+/**
+ *
+ *
+ *
+ */
+
 public class Professor implements People, Grader {
     Course[] courseload;
     Assignments[] assignments;
