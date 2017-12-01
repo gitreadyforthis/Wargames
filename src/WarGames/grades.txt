@@ -1,2 +1,2 @@
-Jake,A
-Greg,B
+Jake,A,Nystrom,Data Structures
+Greg,B,Nystrom,Software Engineering
