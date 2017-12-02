@@ -9,7 +9,9 @@ package WarGames;
  */
 
 public interface Courses {
-    boolean isVisible();
+    boolean isVisible(String myCourse, String assignmentNo);
 
-    boolean hasAssignment();
+    boolean hasAssignment(String myCourse);
+
+    String getGrade(String myCourse, String myStudent, String myProfessor);
 }
