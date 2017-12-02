@@ -9,34 +9,45 @@ import java.util.StringTokenizer;
  * The class for course, contains a single character called grade
  * and a People array of people objects
  * contains a scanner to read in user input
- * and a file io to read in files
+ * and a file1 io to read in files
  */
 public class Course implements Courses {
-    char grade;
-//    Scanner scan = new Scanner("studentrecords/grades.txt").useDelimiter("\\s*Final Grade:\\s*");
-//    String stuff = scan.nextLine();
 
+    private File file1 = new File("src/WarGames/files/grades.txt");
+    private File file2 = new File("src/WarGames/files/Assignments.txt");
+    private Scanner scan = null;
 
-    File file = new File("src/WarGames/grades.txt");
-    Scanner scan = null;
-    /**
-     * boolean isRegistered() checks if the user(professor,ta,or student)
-     * is actually registered for the course they want to access
-     * returns true until checked
+    /*
+      boolean isRegistered() checks if the user(professor,ta,or student)
+      is actually registered for the course they want to access
+      returns true until checked
      */
+/*
     private boolean isRegistered() {
+
+        try {
+            scan = new Scanner(file2);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        while (scan.hasNextLine()) {
+            String stuff = scan.nextLine();
+            StringTokenizer myTokenizer = new StringTokenizer(stuff, ",");
+            String student = myTokenizer.nextToken();
+            String professor = myTokenizer.nextToken();
+            String course = myTokenizer.nextToken();
+            String assignmentNo = myTokenizer.nextToken();
+            String submission = myTokenizer.nextToken();
+            String grade = myTokenizer.nextToken();
+            String visibility = myTokenizer.nextToken();
+
+
+        }
+        scan.close();
         return true;
     }
 
-    /**
-     * char finalGrade() is the final letter grade for the course
-     * for now it returns 0 until it takes in the grade data from the
-     * whole of the assignments in the course
-     */
-
-    private char finalGrade() {
-        return 0;
-    }
+*/
 
     /**
      * isVisible() checks to see if the assignment is listed as
@@ -45,53 +56,99 @@ public class Course implements Courses {
      * postcondition: returns true or false (visible or invisible)
      */
     @Override
-    public boolean isVisible() {
+    public boolean isVisible(String myCourse, String myAssignment) {
+        try {
+            scan = new Scanner(file2);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        while (scan.hasNextLine()) {
+            String stuff = scan.nextLine();
+            StringTokenizer myTokenizer = new StringTokenizer(stuff, ",");
+            String student = myTokenizer.nextToken();
+            String professor = myTokenizer.nextToken();
+            String course = myTokenizer.nextToken();
+            String assignmentNo = myTokenizer.nextToken();
+            String submission = myTokenizer.nextToken();
+            String grade = myTokenizer.nextToken();
+            String visibility = myTokenizer.nextToken();
+            // TODO: 12/2/2017 when isReg is done add to the requirements here
+            if (course.equals(myCourse) && assignmentNo.equals(myAssignment) && hasAssignment(myCourse)) {
+                if (visibility.equals("true")) {
+                    return true;
+                }
+            }
+        }
+        scan.close();
         return false;
     }
 
     /**
      * hasAssignment() checks if the course has any assignment Objects associated
      * with it.
-     * precondition, checks if assignment objects exist in assignment
+     * precondition: checks if assignment objects exist in assignment
      * postCondition: returns true if exist returns false if not
      */
     @Override
-    public boolean hasAssignment() {
+    public boolean hasAssignment(String myCourse) {
         try {
-            scan = new Scanner(file);
+            scan = new Scanner(file2);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 
-        if () {
+        while (scan.hasNextLine()) {
+            String stuff = scan.nextLine();
+            StringTokenizer myTokenizer = new StringTokenizer(stuff, ",");
+            String student = myTokenizer.nextToken();
+            String professor = myTokenizer.nextToken();
+            String course = myTokenizer.nextToken();
+            String assignmentNo = myTokenizer.nextToken();
+            String submission = myTokenizer.nextToken();
+            String grade = myTokenizer.nextToken();
+            String visibiliy = myTokenizer.nextToken();
 
-        } else {
-
+            if (course.equals(myCourse)) {
+                if (!assignmentNo.equals("null")) {
+                    return true;
+                }
+            }
         }
         scan.close();
         return false;
 
     }
-    public String getGrade(){
+
+    /**
+     * string getGrade() is the final letter grade for the course
+     * for now it returns 0 until it takes in the grade data from the
+     * whole of the assignments in the course
+     *
+     * @return final grade
+     */
+    public String getGrade(String myCourse, String myStudent, String myProfessor) {
 
         try {
-            scan = new Scanner(file);
+            scan = new Scanner(file1);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
         String stuff;
-        String compleat=null;
+        String compleat = null;
 
         assert scan != null;
-        while( scan.hasNextLine()) {
+        while (scan.hasNextLine()) {
             stuff = scan.nextLine();
             StringTokenizer myTokenizer = new StringTokenizer(stuff, ",");
             String student = myTokenizer.nextToken();
             String grade = myTokenizer.nextToken();
-            if (student.equals("Greg"))
-               compleat = grade;
+            String teacher = myTokenizer.nextToken();
+            String course = myTokenizer.nextToken();
+            if (student.equals(myStudent) && teacher.equals(myProfessor) && course.equals(myCourse))
+                compleat = grade;
         }
         scan.close();
-      return compleat;
+        return compleat;
     }
 }
