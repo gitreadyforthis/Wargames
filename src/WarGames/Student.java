@@ -18,6 +18,7 @@ public class Student implements People {
     File file = new File("src/WarGames/Assignments.txt");
     File tester = new File("src/WarGames/files/Tester.txt");
     Scanner scan = null;
+    char done = 'd';
 
     /**
      * uploads the students response to the listed assignment to the
@@ -27,12 +28,13 @@ public class Student implements People {
      */
     public void uploadAssignment(String assignmentFile) throws FileNotFoundException, IOException {
         String search = "sub";
-        String newText = tester.toString();
-System.out.print(newText);
+
+
 
 
         try {
             FileReader fr = new FileReader(file);
+            String newText = tester.toString();
             String stuff;
             String compleat = "";
             try (BufferedReader br = new BufferedReader(fr))
@@ -46,15 +48,13 @@ System.out.print(newText);
                 FileWriter fw = new FileWriter(file);
                 fw.write(compleat);
                 fw.close();
+
             }
         }
         catch (Exception e) {
             e.printStackTrace();
         }
-        //BufferedWriter wr = new BufferedWriter(new FileWriter(file,false));
-
-
-        //while( scan.hasNextLine()) {
+       //while( scan.hasNextLine()) {
            // stuff = scan.nextLine();
          //   StringTokenizer myTokenizer = new StringTokenizer(stuff, ",");
            // String student = myTokenizer.nextToken();
@@ -80,7 +80,8 @@ System.out.print(newText);
  * postCondition: the system returns true (the user is valid) if not the system returns an error (false)
  **/
     @Override
-    public boolean checkRegistered() {
+    public boolean checkRegistered()
+    {
         return false;
     }
 
