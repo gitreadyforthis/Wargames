@@ -3,15 +3,10 @@ package WarGames;
 /**
  *this is the public class for Professor
  *it implements both grader and people interfaces
- * this class contains an Course array of course objects called courseLoad
- * an Assignment array of assignment objects called assignments
- * and a Grade array of grades called grades
  */
 
 public class Professor implements People, Grader {
-    Course[] courseload;
-    Assignments[] assignments;
-    Grade[] grades;
+
 
     /**
      * postAssignment() creates an assignment object
@@ -68,14 +63,6 @@ public class Professor implements People, Grader {
         return false;
     }
 
-    /**
-     * @param array of Courses
-     * @return new Course object at designated spot in array
-     */
-   @Override
-    public Course[] courseAccess() {
-        return new Course[0];
-    }
 
     /** checkRegistered() which checks if the people are registered for the course
      * precondition: a "person" tries to access the course

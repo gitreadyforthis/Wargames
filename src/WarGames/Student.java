@@ -1,13 +1,23 @@
 package WarGames;
 
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+import java.io.File;
+import java.io.BufferedWriter;
+import java.io.BufferedReader;
+import java.io.FileWriter;
+import java.io.FileReader;
+import java.io.IOException;
 /**
  * the public class for Students
  * implements People Interface
- * contains an array of Course Objects called
- * courseload
  */
 public class Student implements People {
-    Course[] courseload;
+
+    File file = new File("src/WarGames/Assignments.txt");
+    File tester = new File("src/WarGames/files/Tester.txt");
+    Scanner scan = null;
 
     /**
      * uploads the students response to the listed assignment to the
@@ -15,20 +25,55 @@ public class Student implements People {
      * precondition: assignment object exists
      * post condition: student response is added to assignment object
      */
-    public void uploadAssignment() {
+    public void uploadAssignment(String assignmentFile) throws FileNotFoundException, IOException {
+        String search = "sub";
+        String newText = tester.toString();
+System.out.print(newText);
 
-    //Assignments added = new Assignments();
-    }
 
-    /**
-     * @param array of Courses
-     * @return new Course object at designated spot in array
-     */
-    @Override
-    public Course[] courseAccess() {
-        return new Course[0];
-    }
+        try {
+            FileReader fr = new FileReader(file);
+            String stuff;
+            String compleat = "";
+            try (BufferedReader br = new BufferedReader(fr))
+            {
+                //scan = new Scanner(file);
+                while ((stuff = br.readLine()) != null)
+                {
+                    compleat += stuff;
+                }
+                compleat = compleat.replaceAll(search,newText);
+                FileWriter fw = new FileWriter(file);
+                fw.write(compleat);
+                fw.close();
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        //BufferedWriter wr = new BufferedWriter(new FileWriter(file,false));
 
+
+        //while( scan.hasNextLine()) {
+           // stuff = scan.nextLine();
+         //   StringTokenizer myTokenizer = new StringTokenizer(stuff, ",");
+           // String student = myTokenizer.nextToken();
+           // String professor = myTokenizer.nextToken();
+           // String courses = myTokenizer.nextToken();
+           // String assignmentNo = myTokenizer.nextToken();
+           // String submission = myTokenizer.nextToken();
+           // String visibility = myTokenizer.nextToken();
+            //if(submission.equals("sub"))
+            //{
+            //    newText = tester.toString();
+            //    submission = submission.replace("sub",newText);
+
+            //}
+            //wr.write(submission);
+        //}
+        //wr.close();
+        //scan.close();
+        }
 
  /** boolean checkRegistered() which checks if the people are registered for the course
  * precondition: a "person" tries to access the course

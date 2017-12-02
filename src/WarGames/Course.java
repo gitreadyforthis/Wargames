@@ -1,9 +1,9 @@
 package WarGames;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-import java.util.StringTokenizer;
+        import java.io.File;
+        import java.io.FileNotFoundException;
+        import java.util.Scanner;
+        import java.util.StringTokenizer;
 
 /**
  * The class for course, contains a single character called grade
@@ -63,11 +63,14 @@ public class Course implements Courses {
             e.printStackTrace();
         }
 
-        if () {
+        //if ()
+        //{
 
-        } else {
+        //}
+        //else
+       //     {
 
-        }
+        //}
         scan.close();
         return false;
 
@@ -89,9 +92,9 @@ public class Course implements Courses {
             String student = myTokenizer.nextToken();
             String grade = myTokenizer.nextToken();
             if (student.equals("Greg"))
-               compleat = grade;
+                compleat = grade;
         }
         scan.close();
-      return compleat;
+        return compleat;
     }
 }

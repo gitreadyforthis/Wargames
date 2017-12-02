@@ -1,23 +1,6 @@
 package WarGames;
 
 public class TeacherAssistant implements People, Grader {
-    Course[] courseload;
-
-    public TeacherAssistant(Course[] courseload) {
-        this.courseload = courseload;
-    }
-
-
-    /**
-     * @param array of Courses
-     * @return new Course object at designated spot in array
-     */
-    @Override
-    public Course[] courseAccess() {
-        return new Course[0];
-    }
-
-
     /** boolean checkRegistered() which checks if the people are registered for the course
      * precondition: a "person" tries to access the course
      * postCondition: the system returns true (the user is valid) if not the system returns an error (false)

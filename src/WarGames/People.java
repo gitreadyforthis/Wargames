@@ -2,7 +2,6 @@ package WarGames;
 
 /**
  * The interface for People (Students, Professors, TA's)
- * contains an array of Course objects called courseAccess
  * a boolean checkRegistered() which checks if the people are registered for the course
  * precondition: a "person" tries to access the course
  * postCondition: the system returns true (the user is valid) if not the system returns an error (false)
@@ -13,8 +12,6 @@ package WarGames;
  */
 
 public interface People {
-    Course[] courseAccess();
-
     boolean checkRegistered();
 
     float checkGrade();
