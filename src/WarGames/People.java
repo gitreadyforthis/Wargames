@@ -12,7 +12,7 @@ package WarGames;
  */
 
 public interface People {
-    boolean checkRegistered();
+    boolean checkRegistered(String myCourse, String myStudent, String myProfessor, String myTA);
 
     float checkGrade();
 }

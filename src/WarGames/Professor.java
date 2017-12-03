@@ -69,7 +69,7 @@ public class Professor implements People, Grader {
      * postCondition: the system returns true (the user is valid) if not the system returns an error (false)
      **/
     @Override
-    public boolean checkRegistered() {
+    public boolean checkRegistered(String myCourse, String myStudent, String myProfessor, String myTA) {
         return false;
     }
 
