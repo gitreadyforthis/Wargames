@@ -17,37 +17,7 @@ public class Course implements Courses {
     private File file2 = new File("src/WarGames/files/Assignments.txt");
     private Scanner scan = null;
 
-    /*
-      boolean isRegistered() checks if the user(professor,ta,or student)
-      is actually registered for the course they want to access
-      returns true until checked
-     */
-/*
-    private boolean isRegistered() {
 
-        try {
-            scan = new Scanner(file2);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        while (scan.hasNextLine()) {
-            String stuff = scan.nextLine();
-            StringTokenizer myTokenizer = new StringTokenizer(stuff, ",");
-            String student = myTokenizer.nextToken();
-            String professor = myTokenizer.nextToken();
-            String course = myTokenizer.nextToken();
-            String assignmentNo = myTokenizer.nextToken();
-            String submission = myTokenizer.nextToken();
-            String grade = myTokenizer.nextToken();
-            String visibility = myTokenizer.nextToken();
-
-
-        }
-        scan.close();
-        return true;
-    }
-
-*/
 
     /**
      * isVisible() checks to see if the assignment is listed as

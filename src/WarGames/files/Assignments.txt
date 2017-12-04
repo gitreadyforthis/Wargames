@@ -1,2 +1,2 @@
-Jake,Nystrom,Data Structures,1,sub,grade,false
-Greg,Nystrom,Software Engineering,5,sub,grade,true
+Jake,Nystrom,Data Structures,1,sub,89.5,true
+Greg,Nystrom,Software Engineering,1,sub,grade,true
