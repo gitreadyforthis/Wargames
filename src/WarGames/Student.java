@@ -15,7 +15,7 @@ import java.io.IOException;
  */
 public class Student implements People{
 
-    File file1 = new File("src/WarGames/Assignments.txt");
+    File file1 = new File("src/WarGames/files/Assignments.txt");
     File tester = new File("src/WarGames/files/Tester.txt");
     File grades = new File("src/WarGames/files/grades.txt");
     Scanner scan = null;
@@ -26,36 +26,53 @@ public class Student implements People{
      * precondition: assignment object exists
      * post condition: student response is added to assignment object
      */
-    public void uploadAssignment(String assignmentFile) throws FileNotFoundException, IOException {
+    public void uploadAssignment(String studentName, String professor, String course1, String assignmentNumber, String assignmentFile) throws FileNotFoundException, IOException {
 
         String search = "sub";
 
-            try {
+        try {
             FileReader fr = new FileReader(file1);
             String newText = tester.toString();
             String stuff;
+            String Assign;
             String compleat = "";
-            try (BufferedReader br = new BufferedReader(fr))
-            {
-                //scan = new Scanner(file);
-                while ((stuff = br.readLine()) != null)
-                {
-                    compleat += stuff;
-                }
-                compleat = compleat.replaceAll(search,newText);
-                FileWriter fw = new FileWriter(file1);
-                fw.write(compleat);
-                fw.close();
-                System.out.print(compleat);
 
+
+            try (BufferedReader br = new BufferedReader(fr)) {
+                scan = new Scanner(file1);
+                while (scan.hasNextLine()) {
+                    Assign = scan.nextLine();
+                    StringTokenizer myTokenizer = new StringTokenizer(Assign, ",");
+                    String student = myTokenizer.nextToken();
+                    String teacher = myTokenizer.nextToken();
+                    String course = myTokenizer.nextToken();
+                    String assignmentNo = myTokenizer.nextToken();
+                    String submission = myTokenizer.nextToken();
+                    String grade = myTokenizer.nextToken();
+                    String visibiliy = myTokenizer.nextToken();
+                    if ((submission.equals(assignmentFile) && studentName.equals(student) && assignmentNumber.equals(assignmentNo) && teacher.equals(professor) && visibiliy.equals("true") && course.equals(course1))) {
+                        while ((stuff = br.readLine()) != null) {
+
+                            compleat += stuff;
+                        }
+                        compleat = compleat.replaceAll(search, newText);
+                        FileWriter fw = new FileWriter(file1);
+                        fw.write(compleat);
+                        fw.close();
+                    }
+                }
             }
         }
-        catch (Exception e) {
-            e.printStackTrace();
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
         }
 
 
-        }
+
+
+
 
 
  /** boolean checkRegistered() which checks if the people are registered for the course
@@ -112,33 +129,21 @@ public class Student implements People{
             stuff = scan.nextLine();
             StringTokenizer myTokenizer = new StringTokenizer(stuff, ",");
             String student = myTokenizer.nextToken();
-            String grade = myTokenizer.nextToken();
             String teacher = myTokenizer.nextToken();
             String course = myTokenizer.nextToken();
-            if ( grade.equals("A"))
+            String assignmentNo = myTokenizer.nextToken();
+            String submission = myTokenizer.nextToken();
+            String grade = myTokenizer.nextToken();
+            String visibiliy = myTokenizer.nextToken();
+
+            if (!grade.equals("grade"))
             {
-                courseGrade = 90;
-            }
-            else if(grade.equals(("B")))
-            {
-                courseGrade = 80;
-            }
-            else if(grade.equals(("C")))
-            {
-                courseGrade = 70;
-            }
-            else if(grade.equals(("D")))
-            {
-                courseGrade = 60;
-            }
-            else if(grade.equals(("E")))
-            {
-                courseGrade = 50;
+                courseGrade = Float.parseFloat(grade);
             }
             else
-            {
-                courseGrade = 0;
-            }
+           {
+            System.out.print("Assignment Has not been graded yet");
+           }
         }
         scan.close();
         return courseGrade;
