@@ -14,6 +14,13 @@ public class Grades implements Grade {
      * postcondition: the value associated with the assignment is returned as a float
      */
     private float getVal() {
+
+
+
+
+
+
+
         return grade;
     }
 

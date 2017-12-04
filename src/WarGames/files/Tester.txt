@@ -1,1 +1,3 @@
-this is a test of the student assignment uploadAssignment() method
+
+Jake,Nystrom,Data Structures,1,src\WarGames\files\Tester.txt,89.5,true
+Greg,Nystrom,Software Engineering,1,src\WarGames\files\Tester.txt,grade,true

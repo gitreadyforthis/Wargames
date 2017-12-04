@@ -13,12 +13,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class StudentTest {
     private Student  student = new Student();
-    File file1 = new File("src/WarGames/Assignments.txt");
+
     Scanner scan = null;
 
     @org.junit.jupiter.api.Test
     void uploadAssignment() throws IOException {
-        student.uploadAssignment("Jake", "Nystrom", "Data Structures", "Nystrom", "assignment1.txt");
+        student.uploadAssignment("Jake", "Nystrom", "Data Structures", "1", "assignment1.txt");
+
     }
 }
 

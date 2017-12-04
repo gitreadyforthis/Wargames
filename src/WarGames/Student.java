@@ -16,8 +16,9 @@ import java.io.IOException;
 public class Student implements People{
 
     File file1 = new File("src/WarGames/files/Assignments.txt");
-    File tester = new File("src/WarGames/files/Tester.txt");
+    File tester = new File("src//WarGames//files//Tester.txt");
     File grades = new File("src/WarGames/files/grades.txt");
+
     Scanner scan = null;
 
     /**
@@ -36,9 +37,10 @@ public class Student implements People{
             String stuff;
             String Assign;
             String compleat = "";
+            String newContent;
 
 
-            try (BufferedReader br = new BufferedReader(fr)) {
+            try (BufferedReader br = new BufferedReader(new FileReader(file1))) {
                 scan = new Scanner(file1);
                 while (scan.hasNextLine()) {
                     Assign = scan.nextLine();
@@ -49,18 +51,32 @@ public class Student implements People{
                     String assignmentNo = myTokenizer.nextToken();
                     String submission = myTokenizer.nextToken();
                     String grade = myTokenizer.nextToken();
-                    String visibiliy = myTokenizer.nextToken();
-                    if ((submission.equals(assignmentFile) && studentName.equals(student) && assignmentNumber.equals(assignmentNo) && teacher.equals(professor) && visibiliy.equals("true") && course.equals(course1))) {
-                        while ((stuff = br.readLine()) != null) {
+                    String visibility = myTokenizer.nextToken();
 
-                            compleat += stuff;
+
+                 if ((submission.equals("sub") && student.equals(studentName) && assignmentNo.equals(assignmentNumber) && teacher.equals(professor) && visibility.equals("true") && course.equals(course1))) {
+
+                     stuff = "";
+                        while (stuff != null)
+                        {
+
+                            compleat = compleat + stuff + System.lineSeparator();
+                            stuff = br.readLine();
+
                         }
-                        compleat = compleat.replaceAll(search, newText);
-                        FileWriter fw = new FileWriter(file1);
-                        fw.write(compleat);
+                       newContent = compleat.replace(search, newText);
+                       FileWriter fw = new FileWriter(tester);
+                        fw.write(newContent);
                         fw.close();
+                        br.close();
+
                     }
                 }
+            }
+            catch (IOException e)
+            {
+               e.printStackTrace();
+
             }
         }
             catch (Exception e)
@@ -68,44 +84,6 @@ public class Student implements People{
                 e.printStackTrace();
             }
         }
-
-
-
-
-
-
-
- /** boolean checkRegistered() which checks if the people are registered for the course
- * precondition: a "person" tries to access the course
- * postCondition: the system returns true (the user is valid) if not the system returns an error (false)
-  *
- **/
- // TODO: 12/3/2017 add variable for TA's in the registered check
-
-    @Override
-    public boolean checkRegistered(String myCourse, String myStudent, String myProfessor, String myTA)
-    {try {
-        scan = new Scanner(grades);
-    } catch (FileNotFoundException e) {
-        e.printStackTrace();
-    }
-        while (scan.hasNextLine()) {
-            String stuff = scan.nextLine();
-            StringTokenizer myTokenizer = new StringTokenizer(stuff, ",");
-            String student = myTokenizer.nextToken();
-            String grade = myTokenizer.nextToken();
-            String professor = myTokenizer.nextToken();
-            String course = myTokenizer.nextToken();
-         if (course.equals(myCourse) && student.equals(myStudent) && professor.equals((myProfessor))) {
-                {
-                    return true;
-                }
-            }
-        }
-        scan.close();
-        return false;
-
-    }
 
     /**
      * checkGrade() which returns the associated float value in grade objects
@@ -140,10 +118,15 @@ public class Student implements People{
             {
                 courseGrade = Float.parseFloat(grade);
             }
-            else
+            else if(grade.equals("grade"))
            {
             System.out.print("Assignment Has not been graded yet");
            }
+           else
+            {
+                System.out.print("Assignment NOT FOUND");
+
+            }
         }
         scan.close();
         return courseGrade;

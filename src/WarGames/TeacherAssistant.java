@@ -1,14 +1,6 @@
 package WarGames;
 
 public class TeacherAssistant implements People, Grader {
-    /** boolean checkRegistered() which checks if the people are registered for the course
-     * precondition: a "person" tries to access the course
-     * postCondition: the system returns true (the user is valid) if not the system returns an error (false)
-     **/
-    @Override
-    public boolean checkRegistered(String myCourse, String myStudent, String myProfessor, String myTA) {
-        return false;
-    }
 
     /**
      * checkGrade() which returns the associated float value in grade objects
