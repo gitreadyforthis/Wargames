@@ -1,6 +1,6 @@
-package WarGames;
+package WarGames.Interfaces;
 
-/** this is the interface for Grader
+/** this is the interface for GraderInterface
  * it contains 2 void methods and one boolean
  * createGrade() creates a grade object
  * precondition: a grade object does not exist
@@ -16,7 +16,7 @@ package WarGames;
  * post condition: returns data if true, returns error false
  */
 
-public interface Grader {
+public interface GraderInterface {
     void createGrade();
 
     void changeGrade();

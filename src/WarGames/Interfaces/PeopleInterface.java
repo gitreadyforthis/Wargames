@@ -1,7 +1,7 @@
-package WarGames;
+package WarGames.Interfaces;
 
 /**
- * The interface for People (Students, Professors, TA's)
+ * The interface for PeopleInterface (Students, Professors, TA's)
  * a boolean checkRegistered() which checks if the people are registered for the course
  * precondition: a "person" tries to access the course
  * postCondition: the system returns true (the user is valid) if not the system returns an error (false)
@@ -11,7 +11,7 @@ package WarGames;
  * post condition: returns the grade value (float) taken from the assignment
  */
 
-public interface People {
+public interface PeopleInterface {
 
      String checkGrade(String studentName,String professor, String course1);
 }

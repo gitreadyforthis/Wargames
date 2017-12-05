@@ -1,6 +1,9 @@
-package WarGames;
+package WarGames.Classes;
 
-public class TeacherAssistant implements People, Grader {
+import WarGames.Interfaces.GraderInterface;
+import WarGames.Interfaces.PeopleInterface;
+
+public class TeacherAssistant implements PeopleInterface, GraderInterface {
 
     /**
      * checkGrade() which returns the associated float value in grade objects

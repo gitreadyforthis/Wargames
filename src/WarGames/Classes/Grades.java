@@ -1,11 +1,13 @@
-package WarGames;
+package WarGames.Classes;
+
+import WarGames.Interfaces.GradeInterface;
 
 /**
  * the public class for Grades
  * implements the grade interface
  * contains one float value grade
  */
-public class Grades implements Grade {
+public class Grades implements GradeInterface {
     float grade;
 
     /**

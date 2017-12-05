@@ -1,4 +1,6 @@
-package WarGames;
+package WarGames.Classes;
+
+import WarGames.Interfaces.CourseInterface;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -7,11 +9,11 @@ import java.util.StringTokenizer;
 
 /**
  * The class for course, contains a single character called grade
- * and a People array of people objects
+ * and a PeopleInterface array of people objects
  * contains a scanner to read in user input
  * and a file1 io to read in files
  */
-public class Course implements Courses {
+public class Course implements CourseInterface {
 
     private File file1 = new File("src/WarGames/files/grades.txt");
     private File file2 = new File("src/WarGames/files/Assignments.txt");

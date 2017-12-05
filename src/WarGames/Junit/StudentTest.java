@@ -1,18 +1,13 @@
-package WarGames;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-import java.util.StringTokenizer;
-import java.io.File;
-import java.io.BufferedWriter;
-import java.io.BufferedReader;
-import java.io.FileWriter;
-import java.io.FileReader;
-import java.io.IOException;
+package WarGames.Junit;
+
+import WarGames.Classes.Student;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import java.io.IOException;
+import java.util.Scanner;
 
 class StudentTest {
-    private Student  student = new Student();
+    private Student student = new Student();
 
     Scanner scan = null;
 

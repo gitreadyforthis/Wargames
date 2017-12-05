@@ -1,20 +1,16 @@
-package WarGames;
+package WarGames.Classes;
 
-import java.io.FileNotFoundException;
+import WarGames.Interfaces.PeopleInterface;
+
+import java.io.*;
 import java.util.Scanner;
 import java.util.StringTokenizer;
-import java.io.File;
-import java.io.BufferedWriter;
-import java.io.BufferedReader;
-import java.io.FileWriter;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.regex.*;
+
 /**
  * the public class for Students
- * implements People Interface
+ * implements PeopleInterface Interface
  */
-public class Student implements People{
+public class Student implements PeopleInterface {
 
     File file1 = new File("src//WarGames//files//Assignments.txt");
     File tester = new File("src//WarGames//files//Tester.txt");
@@ -29,7 +25,7 @@ public class Student implements People{
      * precondition: assignment object exists
      * post condition: student response is added to assignment object
      */
-    public void uploadAssignment(String studentName, String professor, String course1, String assignmentNumber, String assignmentFile) throws FileNotFoundException, IOException {
+    public void uploadAssignment(String studentName, String professor, String course1, String assignmentNumber, String assignmentFile) {
 
         String search = "sub";
 

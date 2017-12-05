@@ -1,4 +1,4 @@
-package WarGames;
+package WarGames.Classes;
 
 import java.io.File;
 import java.io.FileNotFoundException;

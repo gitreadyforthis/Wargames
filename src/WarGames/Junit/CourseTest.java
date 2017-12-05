@@ -1,4 +1,6 @@
-package WarGames;
+package WarGames.Junit;
+
+import WarGames.Classes.Course;
 
 import static org.junit.jupiter.api.Assertions.*;
 

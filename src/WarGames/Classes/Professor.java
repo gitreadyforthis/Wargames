@@ -1,4 +1,7 @@
-package WarGames;
+package WarGames.Classes;
+
+import WarGames.Interfaces.GraderInterface;
+import WarGames.Interfaces.PeopleInterface;
 
 import java.io.*;
 import java.util.Scanner;
@@ -9,7 +12,7 @@ import java.util.StringTokenizer;
  *it implements both grader and people interfaces
  */
 
-public class Professor implements People, Grader {
+public class Professor implements PeopleInterface, GraderInterface {
     File file = new File("src/WarGames/files/Assignments.txt");
     File grades = new File("src/WarGames/files/grades.txt");
     File tester = new File("src//WarGames//files//Tester.txt");
@@ -23,7 +26,7 @@ public class Professor implements People, Grader {
      * precondition: an assignment without a grade exists
      * postCondition: the assignment is removed from the array and visibility is set to false
      */
-    public void removeAssignment()throws FileNotFoundException, IOException
+   public void removeAssignment() throws IOException
     {    try {
                 scan = new Scanner(file);
             } catch (FileNotFoundException e) {
