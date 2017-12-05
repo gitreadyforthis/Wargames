@@ -1,3 +1,2 @@
 
-Jake,Nystrom,Data Structures,1,src\WarGames\files\Tester.txt,89.5,true
-Greg,Nystrom,Software Engineering,1,src\WarGames\files\Tester.txt,grade,true
+Jake,Nystrom,Data Structures,1,srcWarGamesfilesTester.txt,89.5,true

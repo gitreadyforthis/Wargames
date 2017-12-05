@@ -1,2 +1,1 @@
 Jake,Nystrom,Data Structures,1,sub,89.5,true
-Greg,Nystrom,Software Engineering,1,sub,grade,true

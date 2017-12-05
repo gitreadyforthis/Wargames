@@ -21,6 +21,13 @@ class StudentTest {
         student.uploadAssignment("Jake", "Nystrom", "Data Structures", "1", "assignment1.txt");
 
     }
+
+    @Test
+    void checkGrade()
+    {
+        student.checkGrade("Jake","Nystrom", "Data Structures");
+
+    }
 }
 
 

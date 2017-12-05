@@ -13,6 +13,5 @@ package WarGames;
 
 public interface People {
 
-
-    float checkGrade();
+     String checkGrade(String studentName,String professor, String course1);
 }

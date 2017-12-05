@@ -9,8 +9,9 @@ public class TeacherAssistant implements People, Grader {
      * @return float
      */
     @Override
-    public float checkGrade() {
-        return 0;
+    public String checkGrade(String studentName,String professor, String course1)
+    {
+    return null;
     }
 
     /**
