@@ -70,6 +70,7 @@ public class Student implements PeopleInterface {
                         br.close();
 
                     }
+                    scan.close();
                 }
             }
             catch (IOException e)

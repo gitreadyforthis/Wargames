@@ -1,5 +1,7 @@
 package WarGames.Interfaces;
 
+import java.io.IOException;
+
 /** this is the interface for GraderInterface
  * it contains 2 void methods and one boolean
  * createGrade() creates a grade object
@@ -18,7 +20,7 @@ package WarGames.Interfaces;
 
 public interface GraderInterface {
 
-    void changeGrade();
+    void changeGrade(String studentName,String professor, String course1, String newGrade)throws IOException;
 
 
 }

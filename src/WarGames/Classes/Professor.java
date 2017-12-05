@@ -64,27 +64,71 @@ public class Professor implements PeopleInterface, GraderInterface {
 
 
 
-
-
     /**
      * changeGrade() modifies the attributes of a preexisting grade object
      * preCondition: a grade already exists
      * post condition: the grades values are modified
      */
-    @Override
-    public void changeGrade() {
 
+    public void changeGrade(String studentName,String professor, String course1, String newGrade) throws IOException {
+        try {
+            scan = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        FileReader fr = new FileReader(file);
+        String newText = newGrade;
+        String stuff;
+        String courseGrade = "";
+        String compleat = "";
+        String newContent;
+        String search = "sub";
+
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            scan = new Scanner(file);
+        assert scan != null;
+        while (scan.hasNextLine()) {
+            stuff = scan.nextLine();
+            StringTokenizer myTokenizer = new StringTokenizer(stuff, ",");
+            String student = myTokenizer.nextToken();
+            String teacher = myTokenizer.nextToken();
+            String course = myTokenizer.nextToken();
+            String assignmentNo = myTokenizer.nextToken();
+            String submission = myTokenizer.nextToken();
+            String grade = myTokenizer.nextToken();
+            String visibiliy = myTokenizer.nextToken();
+
+            if (grade.equals("grade") && student.equals(studentName)&& teacher.equals(professor) &&course.equals(course1))
+            {
+
+
+
+                stuff = "";
+                while (stuff != null)
+                {
+
+                compleat = compleat + stuff + System.lineSeparator();
+                stuff = br.readLine();
+
+                }
+
+                newContent = compleat.replaceFirst(search,newText);
+                FileWriter fw = new FileWriter(tester);
+                fw.write(newContent);
+                fw.close();
+                br.close();
+
+                }
+                scan.close();
+                }
+                }
+                catch (IOException e)
+                {
+                e.printStackTrace();
+
+                }
     }
 
-
-//    /** checkRegistered() which checks if the people are registered for the course
-//     * precondition: a "person" tries to access the course
-//     * postCondition: the system returns true (the user is valid) if not the system returns an error (false)
-//     **/
-//    @Override
-//    public boolean checkRegistered(String myCourse, String myStudent, String myProfessor, String myTA) {
-//        return false;
-//    }
 
 
    /** checkGrade() which returns the associated float value in grade objects
