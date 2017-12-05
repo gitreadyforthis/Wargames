@@ -1,22 +1,18 @@
 package WarGames.Junit;
 
+import WarGames.Classes.TeacherAssistant;
 import org.junit.jupiter.api.Test;
 
 class TeacherAssistantTest {
-
+    private TeacherAssistant tA = new TeacherAssistant();
     @Test
     void checkGrade() {
-    }
-
-    @Test
-    void createGrade() {
+        tA.checkGrade("", "", "");
     }
 
     @Test
     void changeGrade() {
+        tA.changeGrade();
     }
 
-    @Test
-    void pollStudents() {
-    }
 }

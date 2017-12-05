@@ -17,9 +17,8 @@ package WarGames.Interfaces;
  */
 
 public interface GraderInterface {
-    void createGrade();
 
     void changeGrade();
 
-    boolean pollStudents();
+
 }

@@ -64,16 +64,7 @@ public class Professor implements PeopleInterface, GraderInterface {
 
 
 
-    /**
-     * createGrade() creates a grade object
-     * precondition: a grade object does not exist
-     * postcondition: a grade object is created
-     */
 
-    @Override
-    public void createGrade() {
-
-    }
 
     /**
      * changeGrade() modifies the attributes of a preexisting grade object
@@ -83,17 +74,6 @@ public class Professor implements PeopleInterface, GraderInterface {
     @Override
     public void changeGrade() {
 
-    }
-
-    /**
-     * boolean pollStudents() checks if the student object exists/ is valid for the particular
-     * assignment/ grade
-     * precondition student tries to access grade
-     * post condition: returns data if true, returns error false
-     */
-    @Override
-    public boolean pollStudents() {
-        return false;
     }
 
 

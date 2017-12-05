@@ -17,15 +17,7 @@ public class TeacherAssistant implements PeopleInterface, GraderInterface {
     return null;
     }
 
-    /**
-     * createGrade() creates a grade object
-     * precondition: a grade object does not exist
-     * postcondition: a grade object is created
-     */
-    @Override
-    public void createGrade() {
 
-    }
 
     /**
      * changeGrade() modifies the attributes of a preexisting grade object
@@ -37,14 +29,5 @@ public class TeacherAssistant implements PeopleInterface, GraderInterface {
 
     }
 
-    /**
-     * boolean pollStudents() checks if the student object exists/ is valid for the particular
-     * assignment/ grade
-     * precondition student tries to access grade
-     * post condition: returns data if true, returns error false
-     */
-    @Override
-    public boolean pollStudents() {
-        return false;
-    }
+
 }

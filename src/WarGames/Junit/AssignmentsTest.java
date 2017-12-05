@@ -1,20 +1,14 @@
 package WarGames.Junit;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import WarGames.Classes.Assignments;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class AssignmentsTest {
-
-    @BeforeEach
-    void setUp() {
-    }
-
-    @AfterEach
-    void tearDown() {
-    }
-
+    Assignments assignment = new Assignments();
     @Test
     void getGrade() {
+        int grade = assignment.getGrade("Jake", "Nystrom", "Data Structures", "1");
+        Assertions.assertEquals(89.5, grade);
     }
 }
