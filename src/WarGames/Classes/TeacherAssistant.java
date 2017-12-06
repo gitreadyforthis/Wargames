@@ -17,17 +17,8 @@ public class TeacherAssistant implements PeopleInterface, GraderInterface {
     return null;
     }
 
-
-
-    /**
-     * changeGrade() modifies the attributes of a preexisting grade object
-     * preCondition: a grade already exists
-     * post condition: the grades values are modified
-     */
     @Override
-    public void changeGrade() {
+    public void changeGrade(String studentName, String professor, String course1, String newGrade) {
 
     }
-
-
 }
