@@ -16,6 +16,7 @@ import java.io.IOException;
  * assignment/ grade
  * precondition student tries to access grade
  * post condition: returns data if true, returns error false
+ * void no @return required
  */
 
 public interface GraderInterface {

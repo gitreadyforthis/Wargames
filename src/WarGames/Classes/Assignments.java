@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 
 /**
  * The class for Assignments
- * has a grade value (int) and values for students
+ * has a grade value and value for students
  */
 
 public class Assignments {
@@ -19,6 +19,9 @@ public class Assignments {
     /**
      * getGrade() returns a grade value associated
      * with the assignment object
+     * pre condition: assignment object and grade value exists
+     * post condition: grade value is returned
+     * @return int assGrade();
      */
     public int getGrade(String myStudent, String myProfessor, String myCourse, String myAssignment) {
         int assGrade = 0;

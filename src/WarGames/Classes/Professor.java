@@ -25,6 +25,7 @@ public class Professor implements PeopleInterface, GraderInterface {
      * as long as there is no grade associated with the assignment
      * precondition: an assignment without a grade exists
      * postCondition: the assignment is removed from the array and visibility is set to false
+    * void does not @return
      */
    public void removeAssignment() throws IOException
     {    try {
@@ -68,6 +69,7 @@ public class Professor implements PeopleInterface, GraderInterface {
      * changeGrade() modifies the attributes of a preexisting grade object
      * preCondition: a grade already exists
      * post condition: the grades values are modified
+     *  is void does not @return
      */
 
     public void changeGrade(String studentName,String professor, String course1, String newGrade) throws IOException {

@@ -17,6 +17,12 @@ public class TeacherAssistant implements PeopleInterface, GraderInterface {
     return null;
     }
 
+    /**
+     * changeGrade() which changes the associated grade value
+     * * precondition: assignment has grade
+     * post condition: changes grade value
+     * does not @return anything since its void
+     */
     @Override
     public void changeGrade(String studentName, String professor, String course1, String newGrade) {
 

@@ -24,6 +24,7 @@ public class Student implements PeopleInterface {
      * assignment object
      * precondition: assignment object exists
      * post condition: student response is added to assignment object
+     * is void no @return applicable
      */
     public void uploadAssignment(String studentName, String professor, String course1, String assignmentNumber, String assignmentFile) {
 
@@ -88,9 +89,9 @@ public class Student implements PeopleInterface {
     /**
      * checkGrade() which returns the associated float value in grade objects
      * precondition: assignment has grade
-     * post condition: returns the grade value (float) taken from the assignment
-     * checks the listed letter grade and returns a float #
-     * @return float
+     * post condition: returns the grade value taken from the assignment
+     * checks the listed letter grade and returns a string representation of grade
+     * @return String
      */
     @Override
     public String checkGrade(String studentName,String professor, String course1) {

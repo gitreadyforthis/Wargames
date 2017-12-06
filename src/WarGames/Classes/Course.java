@@ -26,6 +26,7 @@ public class Course implements CourseInterface {
      * visible by the professor
      * precondition the professor has posted an assignment to course
      * postcondition: returns true or false (visible or invisible)
+     * @returns true or false
      */
     @Override
     public boolean isVisible(String myCourse, String myAssignment) {
@@ -61,6 +62,7 @@ public class Course implements CourseInterface {
      * with it.
      * precondition: checks if assignment objects exist in assignment
      * postCondition: returns true if exist returns false if not
+     * @returns true or false
      */
     @Override
     public boolean hasAssignment(String myCourse) {
@@ -94,10 +96,9 @@ public class Course implements CourseInterface {
 
     /**
      * string getGrade() is the final letter grade for the course
-     * for now it returns 0 until it takes in the grade data from the
-     * whole of the assignments in the course
-     *
-     * @return final grade
+     *  @return final grade (String)
+     *  precondition the grade field in file Grade is filled (aka !="grade")
+     *  post condition: String compleat (aka the final letter grade) is returned
      */
     public String getGrade(String myCourse, String myStudent, String myProfessor) {
 

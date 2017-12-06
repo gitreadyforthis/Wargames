@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 class StudentTest {
     private Student student = new Student();
-    Assignments assignments
+    Assignments assignments;
     Scanner scan = null;
 
     @org.junit.jupiter.api.Test
